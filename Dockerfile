@@ -4,5 +4,7 @@ RUN adduser --uid 1000 --disabled-password siuyin
 RUN echo 'siuyin   ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER siuyin
 WORKDIR /home/siuyin
-ADD .vimrc
+RUN mkdir -p .vim/autoload
+ADD --chown=siuyin:siuyin .vimrc .
+ADD --chown=siuyin:siuyin  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim .vim/autoload
 CMD ["bash"]
