@@ -4,6 +4,8 @@ set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
+colorscheme ron
+
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
